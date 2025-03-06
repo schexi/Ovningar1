@@ -205,10 +205,12 @@ return tal[2];
 
 }
 
-// Arrayer Uppgift 1 (icke färdig blyat)
+// Arrayer Uppgift 1
 public static void uppgift1 () {
 
 }
+
+// Arrayer Uppgift 2
 
 
 }
