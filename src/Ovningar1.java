@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.Random;
 import java.util.Arrays;
+import java.util.Collections;
 
 
 public class Ovningar1 {
@@ -9,6 +10,7 @@ public static void main(String[] args) throws Exception {
     
     Scanner scanner = new Scanner(System.in);
 
+   /* För uppgift10
     System.out.println("Mata in ditt första tal: ");
     
     int tal1 = scanner.nextInt();
@@ -17,7 +19,42 @@ public static void main(String[] args) throws Exception {
     scanner.nextLine();
     
     System.out.print("Största talet är: " + uppgift10(tal1, tal2, tal3));
+    */
+
+    System.out.println("Hur många namn vill du mata in? ");
+    int antalNamn = scanner.nextInt();
+    scanner.nextLine();
+
+    String[] namn = new String[antalNamn];
     
+    for (int i = 0; i < namn.length; i++) {
+
+        System.out.printf("Skriv in ett namn för plats %d i listan: ", i);
+
+        namn[i] = scanner.nextLine();
+    }
+
+    int val = 0;
+    System.out.println("Hur vill du sortera listan?");
+    System.out.println("............................");
+    System.out.println("1. Stigande"); 
+    System.out.println("2. Fallande"); 
+    System.out.println("............................");
+    System.out.println("Skriv in ditt val: ");
+
+    val = scanner.nextInt();
+    scanner.nextLine();
+
+    switch (val) {
+
+        case 1 : { System.out.println(Arrays.toString(uppgift1(namn))); }
+
+        case 2: { System.out.println(Arrays.toString(uppgift2(namn))); }
+
+        default: {System.out.println("Fel i inmatningen, välj 1 eller 2");}
+    }
+
+    scanner.close();
 }
 
 // Variabler typkonvertering Uppgift 8
@@ -206,11 +243,20 @@ return tal[2];
 }
 
 // Arrayer Uppgift 1
-public static void uppgift1 () {
+public static String[] uppgift1 (String[] str) {
 
+    Arrays.sort(str);
+
+return str;
 }
 
 // Arrayer Uppgift 2
+public static String[] uppgift2 (String[] str) {
+
+    Arrays.sort(str, Collections.reverseOrder());
+
+return str;
+}
 
 
 }
